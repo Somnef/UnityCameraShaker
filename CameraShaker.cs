@@ -43,7 +43,13 @@ public class CameraShaker : MonoBehaviour
             if(cTimeToFade <= 0f)
             {
                 if (!fadeTimeOut)
+                {
+                    xDephasing += Mathf.Sin(Mathf.Sqrt(xFrequency * xFrequency - xRed * xRed) * timePassed);
+                    yDephasing += Mathf.Sin(Mathf.Sqrt(yFrequency * yFrequency - yRed * yRed) * timePassed);
+                    zRotDephasing += Mathf.Sin(Mathf.Sqrt(zRotFrequency * zRotFrequency - zRotRed * zRotRed) * timePassed);
+                
                     timePassed = 0f;
+                }
 
                 fadeTimeOut = true;
 
