@@ -1,14 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Dummy))]
-public class DummyEditor : Editor
+[CustomEditor(typeof(DummyCameraShaker))]
+public class DummyCamShakeEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        Dummy script = (Dummy)target;
+        DummyCameraShaker script = (DummyCameraShaker)target;
 
         if (GUILayout.Button("Shake"))
         {
